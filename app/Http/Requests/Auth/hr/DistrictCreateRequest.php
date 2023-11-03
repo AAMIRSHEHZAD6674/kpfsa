@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Http\Requests\Auth\hr;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class DistrictCreateRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return false;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'name' => ['required', min(4), max(15)],
+            'operational' => ['required'],
+            'code' => ['required'],
+            'operational_district_id' => ['required'],
+            'division' => ['required'],
+        ];
+    }
+}

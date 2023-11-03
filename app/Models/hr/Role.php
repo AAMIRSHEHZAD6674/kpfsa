@@ -5,18 +5,16 @@ namespace App\Models\hr;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class District extends Model
+class Role extends Model
 {
     use HasFactory;
 
-    protected $table = 'districts';
+    protected $table = 'roles';
     public $timestamps = false;
     protected $fillable = [
-        'name',
-        'operational',
-        'code',
-        'operational_district_id',
-        'division',
+        'user_id',
+        'role',
+        'status',
+        'created_by'
     ];
 }
